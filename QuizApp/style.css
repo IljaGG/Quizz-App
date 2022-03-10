@@ -42,3 +42,27 @@ body {
 .cup {
     width: 100%;
 }
+
+.restart-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+@media (max-width: 530px) {
+
+    .navbar {
+        display: none !important;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100vw !important;
+    }
+
+    .quiz-card {
+        height: 100%;
+        width: 100%;
+    }
+
+}
