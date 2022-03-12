@@ -64,6 +64,10 @@ function init() {
     showQuestion();
 }
 
+function startGame() {
+    document.getElementById('quizstart').style = 'display: none';
+}
+
 function showQuestion() {
 
     if (gameIsOver()) {
@@ -139,7 +143,7 @@ function resetAnswerButtons() {
 }
 
 function restartGame() {
-    document.getElementById('header-img').src = 'img/quiz.jpg';
+    document.getElementById('header-img').src = 'img/basketball.jpg';
     document.getElementById('endscreen').style = 'display: none;';
     document.getElementById('questionbody').style = '';
 
