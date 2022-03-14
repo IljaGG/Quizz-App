@@ -59,14 +59,17 @@ let currentQuestion = 0;
 let AUDIO_SUCCESS = new Audio('sound/right.mp3');
 let AUDIO_FAIL = new Audio('sound/wrong.mp3');
 
+
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
     showQuestion();
 }
 
+
 function startGame() {
     document.getElementById('quizstart').style = 'display: none';
 }
+
 
 function showQuestion() {
 
@@ -79,9 +82,11 @@ function showQuestion() {
 
 }
 
+
 function gameIsOver() {
     return currentQuestion >= questions.length;
 }
+
 
 function showEndScreen() {
     document.getElementById('endscreen').style = '';
@@ -90,6 +95,7 @@ function showEndScreen() {
     document.getElementById('amount-right-questions').innerHTML = rightQuestions;
     document.getElementById('header-img').src = 'img/cup.png';
 }
+
 
 function updateToNextQuestion() {
     let question = questions[currentQuestion];
@@ -101,12 +107,14 @@ function updateToNextQuestion() {
     document.getElementById('answer_4').innerHTML = question['answer_4'];
 }
 
+
 function updateProgressBar() {
     let percent = (currentQuestion + 1) / questions.length;
     percent = Math.round(percent * 100);
     document.getElementById('progress-bar').innerHTML = `${percent}%`;
     document.getElementById('progress-bar').style = `width: ${percent}%`;
 }
+
 
 function answer(selection) {
     let question = questions[currentQuestion];
@@ -124,12 +132,14 @@ function answer(selection) {
     document.getElementById('next-button').disabled = false;
 }
 
+
 function nextQuestion() {
     currentQuestion++;
     document.getElementById('next-button').disabled = true;
     resetAnswerButtons();
     showQuestion();
 }
+
 
 function resetAnswerButtons() {
     document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
@@ -141,6 +151,7 @@ function resetAnswerButtons() {
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
 }
+
 
 function restartGame() {
     document.getElementById('header-img').src = 'img/basketball.jpg';
